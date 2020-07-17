@@ -13,6 +13,7 @@ dependencies:
   compression: 1.7.4
   core-js: 3.6.5
   cors: 2.8.5
+  cross-env: 6.0.3
   dotenv: 8.2.0
   feathers-mongoose: 8.3.1_mongoose@5.9.24
   form-data: 3.0.0
@@ -25,8 +26,6 @@ dependencies:
 devDependencies:
   '@rollup/plugin-commonjs': 11.0.2_rollup@2.21.0
   '@rollup/plugin-node-resolve': 7.1.3_rollup@2.21.0
-  '@vizuaalog/bulmajs': 0.11.0
-  cross-env: 6.0.3
   date-fns: 2.14.0
   js-bbcode-parser: 3.0.4
   mocha: 7.2.0
@@ -352,10 +351,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-NIQfh9WwJuJKlgmby4NgwMpoBOmNPCDgaRNPiLYZBtkbHkszK/9R52B5yGkd5a34rbVdAADuo8FhOS/5AZDemw==
-  /@vizuaalog/bulmajs/0.11.0:
-    dev: true
-    resolution:
-      integrity: sha512-Zv7RYZuY3o9OMixtFN3syeKFfDg/aU/4BcyIEl7WBXFZmf55p24la3KDEv9tgpPFtRPhjo3IMbdbvWPFwpnNXg==
   /abbrev/1.1.1:
     dev: true
     resolution:
@@ -899,7 +894,7 @@ packages:
   /cross-env/6.0.3:
     dependencies:
       cross-spawn: 7.0.3
-    dev: true
+    dev: false
     engines:
       node: '>=8.0'
     hasBin: true
@@ -922,7 +917,6 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
-    dev: true
     engines:
       node: '>= 8'
     resolution:
@@ -1818,7 +1812,6 @@ packages:
     resolution:
       integrity: sha1-o32U7ZzaLVmGXJ92/llu4fM4dB4=
   /isexe/2.0.0:
-    dev: true
     resolution:
       integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
   /jest-worker/24.9.0:
@@ -2484,7 +2477,6 @@ packages:
     resolution:
       integrity: sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
   /path-key/3.1.1:
-    dev: true
     engines:
       node: '>=8'
     resolution:
@@ -2926,7 +2918,6 @@ packages:
   /shebang-command/2.0.0:
     dependencies:
       shebang-regex: 3.0.0
-    dev: true
     engines:
       node: '>=8'
     resolution:
@@ -2938,7 +2929,6 @@ packages:
     resolution:
       integrity: sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=
   /shebang-regex/3.0.0:
-    dev: true
     engines:
       node: '>=8'
     resolution:
@@ -3425,7 +3415,6 @@ packages:
   /which/2.0.2:
     dependencies:
       isexe: 2.0.0
-    dev: true
     engines:
       node: '>= 8'
     hasBin: true
@@ -3595,7 +3584,6 @@ specifiers:
   '@feathersjs/transport-commons': ^4.5.5
   '@rollup/plugin-commonjs': 11.0.2
   '@rollup/plugin-node-resolve': ^7.1.1
-  '@vizuaalog/bulmajs': ^0.11.0
   axios: ^0.19.2
   compression: ^1.7.4
   core-js: ^3.6.4

@@ -1,7 +1,7 @@
 <script>
-  import Navbar from '@vizuaalog/bulmajs/src/plugins/Navbar';
-
   export let title;
+
+  let mobileNavbarActive = false;
 </script>
 
 <nav class="navbar is-light" role="navigation" aria-label="main navigation">
@@ -11,13 +11,13 @@
 			<strong>{title}</strong>
 		</a>
 
-		<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main_nav">
+		<a role="button" class="navbar-burger burger" class:is-active={mobileNavbarActive} aria-label="menu" aria-expanded="false" data-target="main_nav" on:click={() => {mobileNavbarActive = !mobileNavbarActive}}>
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
 			<span aria-hidden="true"></span>
 		</a>
 	</div>
-	<div id="main_nav" class="navbar-menu">
+	<div id="main_nav" class="navbar-menu" class:is-active={mobileNavbarActive}>
 		<div class="navbar-start">
 
 		</div>
