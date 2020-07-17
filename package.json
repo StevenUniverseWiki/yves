@@ -31,7 +31,7 @@
     "dev": "npm-run-all --parallel api:dev frontend:serve-nollup",
     "mocha": "mocha test/ --recursive --exit",
     "api:lint": "eslint src/. test/. --config .eslintrc.json",
-    "test": "npm run api:lint && npm run mocha",
+    "test": "npm run api:lint && npm run mocha"
   },
   "standard": {
     "env": [
