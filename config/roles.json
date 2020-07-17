@@ -1,0 +1,38 @@
+{
+	"263297158617235456": {
+		"name": "Burócrata",
+		"permissions": ["all"]
+	},
+	"263296909341360148": {
+		"name": "Administrador",
+		"permissions": ["create", "update", "delete"]
+	},
+	"263297615922200576": {
+		"name": "Diseñador",
+		"permissions": ["delete"]
+	},
+	"263297791260884993": {
+		"name": "Mod. de contenido"
+	},
+	"263297651578109953": {
+		"name": "Mod. de discusión"
+	},
+	"263297448015953930": {
+		"name": "Mod. de comentarios"
+	},
+	"263297496678268928": {
+		"name": "Reversor"
+	},
+	"263297320521564176": {
+		"name": "Mod. de chat"
+	},
+	"314222874707623937": {
+		"name": "Mod. temporal de chat"
+	},
+	"263297561874399232": {
+		"name": "Anfitrión"
+	},
+	"263299172055121921": {
+		"name": "Mentor"
+	}
+}

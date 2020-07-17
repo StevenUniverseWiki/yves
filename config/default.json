@@ -1,0 +1,42 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "frontend": "../public",
+  "paginate": {
+    "default": 100,
+    "max": 3000
+  },
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "JWT_SECRET",
+    "authStrategies": [
+      "jwt",
+      "local"
+    ],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "FRONTEND_URL",
+      "issuer": "suw-chatlogs",
+      "algorithm": "HS256",
+      "expiresIn": "2d"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "oauth": {
+      "defaults": {
+
+      },
+      "discord": {
+        "client_id": "DISCORD_CLIENT_ID",
+        "client_secret": "DISCORD_CLIENT_SECRET",
+        "scope": ["identify", "guilds"]
+      }
+    }
+  },
+  "mongodb": "MONGODB_URI"
+}
