@@ -12,7 +12,7 @@
   import feathers from '@feathersjs/client';
 
   let currentTab = 'logs';
-  const socket = io();
+  const socket = io('http://localhost:3030');
   const client = feathers();
   client.configure(feathers.socketio(socket));  
 </script>
@@ -53,7 +53,7 @@
 
 <style>
   .section {
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.5rem;
   }
 
   .tabs {

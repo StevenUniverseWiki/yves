@@ -27,6 +27,7 @@
 		textSearchField: '',
 		searchIsCaseSensitive: false,
 		searchIsRegex: false,
+		searchRegexOptions: '',
 		startTimestampField: '',
 		endTimestampField: '',
 		usernameField: '',
@@ -55,12 +56,13 @@
 				searchQuery.text = {
 					$regex: uiState.textSearchField.trim()
 				}
+				if (uiState.searchRegexOptions.trim()) searchQuery.text.$options = uiState.searchRegexOptions.trim();
 			} else {
-				// TODO: check for case-sensitivity
 				searchQuery.text = {
 					$search: uiState.textSearchField.trim()
 				}
-			}		
+				if (uiState.searchIsCaseSensitive) searchQuery.text.$searchCaseSensitive = true;
+			}
 		}
 		if (uiState.startTimestampField || uiState.endTimestampField) {
 			searchQuery.timestamp = {};
@@ -157,12 +159,21 @@
 			<div class="field">
 				{#if uiState.searchIsRegex}
 					<label class="label">Expresión regular (<i>RegEx</i> literal JavaScript):</label>
+					<div class="field has-addons">
+							<p class="control is-expanded">
+							<input class="input" type="text" bind:value={uiState.textSearchField} placeholder="Pattern RegEx">
+							</p>
+							<p class="control">
+							<input class="input" type="text" bind:value={uiState.searchRegexOptions} placeholder="Opciones RegEx">
+							</p>
+					</div>
 				{:else}
 					<label class="label">Texto a buscar:</label>
+					<div class="control">
+						<input class="input" id="search" type="text" name="search" bind:value={uiState.textSearchField}>
+					</div>
 				{/if}
-				<div class="control">
-					<input class="input" id="search" type="text" name="search" bind:value={uiState.textSearchField}>
-				</div>
+				
 			</div>
 			<div class="field">
 				{#if !uiState.searchIsRegex}
@@ -362,18 +373,14 @@
 				{#if uiState.compactMode}
 					<CompactMessage {...entry}/>
 				{:else}
-					{#if entry.event === 'MESSAGE'}
+					{#if entry.event === 'MESSAGE' || entry.event === 'ME'}
 						<ChatMessage
 							username={entry.user}
 							timestamp={entry.timestamp}
 							message={entry.text}
-							isRoleplay={false} />
-					{:else if entry.event === 'ME'}
-						<ChatMessage
-							username={entry.user}
-							timestamp={entry.timestamp}
-							message={entry.text}
-							isRoleplay={true} />
+							isRoleplay={entry.event === 'ME'}
+							deleted={entry.deleted}
+							deletionReason={entry.deletionReason} />
 					{:else}
 						<SystemMessage {...entry} />
 					{/if}				
@@ -394,6 +401,13 @@
 	    position: relative;
 	    bottom: 10px !important;
 	    margin-left: 6px;
+	}
+	.modal {
+		padding-left: 0.6rem;
+		padding-right: 0.6rem;
+	}
+	.modal-card {
+		border-radius: 6px;
 	}
 </style>
 

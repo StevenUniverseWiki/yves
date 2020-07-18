@@ -18,6 +18,8 @@ const removeEmpty = (item) => {
 	if (item.event !== 'BAN' && item.event !== 'UNBAN' && item.event !== 'KICK') {
 		delete item['targetUser'];
 	}
+	if (item.userCount) delete item.userCount;
+	if (item.deleted) delete item.text;
   	return item;
 }
 

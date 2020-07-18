@@ -4,7 +4,7 @@
 	import { addMinutes, format } from 'date-fns';
 	import { es } from 'date-fns/locale';
 	import tagParser from 'js-bbcode-parser';
-	export let timestamp, username, message, isRoleplay;
+	export let timestamp, username, message, isRoleplay, deleted, deletionReason;
 
 	let userAvatar = '';
 
@@ -33,10 +33,14 @@
 	    })}</small>
 	    <br />
 	    <div class="msg-content">
-	    	{#if isRoleplay}
-	    		<i>* {username} {@html tagParser.parse(message)}</i>
+	    	{#if deleted}
+	    		<ion-icon name="trash"></ion-icon> <i>Este elemento ha sido eliminado. Razón: {deletionReason}</i>
 	    	{:else}
-	    		{@html tagParser.parse(message)}
+		    	{#if isRoleplay}
+		    		<i>* {username} {@html tagParser.parse(message || '')}</i>
+		    	{:else}
+		    		{@html tagParser.parse(message || '')}
+		    	{/if}
 	    	{/if}
 	    </div>
 	  </div>

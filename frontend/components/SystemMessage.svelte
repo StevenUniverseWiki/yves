@@ -17,18 +17,22 @@
 			<small>[{lightFormat(addMinutes(new Date(timestamp), new Date(timestamp).getTimezoneOffset()), "dd/MM/yyyy, h:mm:ss aa", {
 				    	locale: es
 				    })}]</small>
-			{#if event === 'JOIN'}
-				{user} ha entrado al chat.
-			{:else if event === 'PART'}
-				{user} ha salido del chat.
-			{:else if event === 'KICK'}
-				{targetUser} fue expulsado por {user}.
-			{:else if event === 'BAN'}
-				{targetUser} fue baneado por {user} durante {formatDistance(banExpiry, new Date(timestamp), {
-					locale: es
-				})} (razón: {banReason}).
-			{:else if event === 'UNBAN'}
-				{user} revocó el ban de {targetUser} (razón: {banReason}).
+			{#if deleted}
+				<ion-icon name="trash"></ion-icon> <i>Este elemento ha sido eliminado. Razón: {deletionReason}</i>
+			{:else}
+				{#if event === 'JOIN'}
+					{user} ha entrado al chat.
+				{:else if event === 'PART'}
+					{user} ha salido del chat.
+				{:else if event === 'KICK'}
+					{targetUser} fue expulsado por {user}.
+				{:else if event === 'BAN'}
+					{targetUser} fue baneado por {user} durante {formatDistance(banExpiry, new Date(timestamp), {
+						locale: es
+					})}  (razón: {banReason || 'no especificada'}).
+				{:else if event === 'UNBAN'}
+					{user} revocó el ban de {targetUser} (razón: {banReason || 'no especificada'}).
+				{/if}
 			{/if}
 		</div>
 	</div>

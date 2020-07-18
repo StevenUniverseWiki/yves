@@ -7,8 +7,8 @@ exports.searchRegex = function () {
     const query = hook.params.query;
     const searchableFields = ['text', 'banReason', 'user', 'targetUser'];
     for (let field in query) {
-      if(searchableFields.includes(field) && query[field].$search && field.indexOf('$') == -1) {
-        query[field] = { $regex: new RegExp(query[field].$search, 'i') }
+      if (searchableFields.includes(field) && query[field].$search && field.indexOf('$') == -1) {
+        query[field] = { $regex: new RegExp(query[field].$search.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&'), query[field].$searchCaseSensitive ? '': 'i') }
       }
     }
     hook.params.query = query
