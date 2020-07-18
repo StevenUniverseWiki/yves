@@ -12,7 +12,7 @@
   import feathers from '@feathersjs/client';
 
   let currentTab = 'logs';
-  const socket = io('http://localhost:3030');
+  const socket = io();
   const client = feathers();
   client.configure(feathers.socketio(socket));  
 </script>
