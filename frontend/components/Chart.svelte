@@ -4,7 +4,7 @@
 
 <main>
 	<div class="chart chart-messages-last-30-days">
-		<iframe src="https://charts.mongodb.com/charts-suwchatbot-dsvyf/embed/charts?id={id}&theme={theme}"></iframe>
+		<iframe src="https://charts.mongodb.com/charts-suwchatbot-dsvyf/embed/charts?id={id}&theme={theme}" loading="lazy"></iframe>
 	</div>
 </main>
 
