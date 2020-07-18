@@ -1,5 +1,5 @@
 <script>
-	let version = '1.0.1';
+	let version = '1.0.3';
 </script>
 
 <footer class="footer">
