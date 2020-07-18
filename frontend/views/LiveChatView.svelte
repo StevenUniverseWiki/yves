@@ -3,7 +3,7 @@
 	import SystemMessage from '../components/SystemMessage.svelte';
 	import CompactMessage from '../components/CompactMessage.svelte';
 
-	export let client;
+	export let client, active;
 
 	let uiState = {
 		// display options
@@ -16,10 +16,9 @@
 		console.log('Message created:', message);
 		entries = [...entries, message];
 	});
-	
 </script>
 
-<main>
+<main hidden={!active}>
 	<section class="liveChat">
 		<div class="notification is-info">
 			<span class="icon is-medium">

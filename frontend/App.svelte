@@ -8,11 +8,10 @@
   import LiveChatView from './views/LiveChatView.svelte'
   import AnalyticsView from './views/AnalyticsView.svelte'
 
-  let currentTab = 'logs';
-
   import io from 'socket.io-client';
-  import feathers from "@feathersjs/client";
+  import feathers from '@feathersjs/client';
 
+  let currentTab = 'logs';
   const socket = io();
   const client = feathers();
   client.configure(feathers.socketio(socket));  
@@ -22,7 +21,7 @@
   <Navbar title="Registros de chat"/>
   <section class="section">
   <div class="container">
-  <div class="tabs is-centered is-boxed">
+  <div class="tabs is-fullwidth">
     <ul>
       <li class:is-active="{currentTab === 'logs'}" on:click="{() => currentTab = 'logs'}">
         <a>
@@ -44,14 +43,9 @@
       </li>
     </ul>
   </div>
-  
-  {#if currentTab === 'logs'}
-    <LogSearchView client={client} />
-  {:else if currentTab === 'live-chat'}
-    <LiveChatView client={client} />
-  {:else if currentTab === 'analytics'}
-    <AnalyticsView/>
-  {/if}
+  <LogSearchView client={client} active={currentTab === 'logs'} />
+  <LiveChatView client={client} active={currentTab === 'live-chat'} />
+  <AnalyticsView active={currentTab === 'analytics'} />
 </div>
 </section>
 <Footer/>

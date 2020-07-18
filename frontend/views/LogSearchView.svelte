@@ -3,7 +3,7 @@
 	import SystemMessage from '../components/SystemMessage.svelte';
 	import CompactMessage from '../components/CompactMessage.svelte';
 
-	export let client;
+	export let client, active;
 
 	window.messageService = client.service('api/entries');
 
@@ -142,10 +142,9 @@
 			query = buildSearchQuery();
 		}
 	}
-
 </script>
 
-<main>
+<main hidden={!active}>
 	<section class="logSearchInterface">
 		<div class="notification is-info">
 			<span class="icon is-medium">

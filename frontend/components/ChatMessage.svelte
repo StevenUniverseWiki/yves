@@ -1,7 +1,7 @@
 <script>
 	import { beforeUpdate } from 'svelte';
 	import axios from 'axios';
-	import { format } from 'date-fns';
+	import { addMinutes, format } from 'date-fns';
 	import { es } from 'date-fns/locale';
 	import tagParser from 'js-bbcode-parser';
 	export let timestamp, username, message, isRoleplay;
@@ -28,7 +28,7 @@
 	  </figure>
 	  <div class="media-content">
 	    <strong>{username}</strong>
-	    <small>{format(new Date(timestamp), "d 'de' MMMM 'de' yyyy, h:m:s aaaa", {
+	    <small>{format(addMinutes(new Date(timestamp), new Date(timestamp).getTimezoneOffset()), "d 'de' MMMM 'de' yyyy, h:mm:ss aa", {
 	    	locale: es
 	    })}</small>
 	    <br />

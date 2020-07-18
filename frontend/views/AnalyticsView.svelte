@@ -1,10 +1,12 @@
 <script>
 	import Chart from '../components/Chart.svelte';
 
+	export let active;
+
 	let theme = 'light';
 </script>
 
-<main>
+<main hidden={!active}>
 	<section class="analytics">
 		<p>Esta sección provee información sobre diferentes métricas de uso y rendimiento del chat en el tiempo, representadas como gráficos.</p>
 		<br />

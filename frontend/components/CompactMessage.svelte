@@ -1,7 +1,7 @@
 <script>
 	import { beforeUpdate } from 'svelte';
 	import tagParser from 'js-bbcode-parser';
-	import { addSeconds, lightFormat, formatDistance } from 'date-fns';
+	import { addMinutes, addSeconds, lightFormat, formatDistance } from 'date-fns';
 	import { es } from 'date-fns/locale';
 
 	export let event, user, timestamp, text, targetUser, banLength, banReason, deleted, deletionReason;
@@ -15,7 +15,7 @@
 <main>
 	<article class="media message is-half">
 	  <div class="media-content">
-	  	<small>[{lightFormat(new Date(timestamp), "dd/MM/yyyy, h:m:s aaaa", {
+	  	<small>[{lightFormat(addMinutes(new Date(timestamp), new Date(timestamp).getTimezoneOffset()), "dd/MM/yyyy, h:mm:ss aa", {
 	    	locale: es
 	    })}]</small>
 	  	{#if event === 'MESSAGE'}
