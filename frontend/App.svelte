@@ -1,19 +1,19 @@
 <script>
   // components
-  import Navbar from './components/Navbar.svelte'
-  import Footer from './components/Footer.svelte'
+  import Navbar from './components/Navbar.svelte';
+  import Footer from './components/Footer.svelte';
 
   // children views
-  import LogSearchView from './views/LogSearchView.svelte'
-  import LiveChatView from './views/LiveChatView.svelte'
-  import AnalyticsView from './views/AnalyticsView.svelte'
+  import LogSearchView from './views/LogSearchView.svelte';
+  import LiveChatView from './views/LiveChatView.svelte';
+  import AnalyticsView from './views/AnalyticsView.svelte';
 
   import io from 'socket.io-client';
   import feathers from '@feathersjs/client';
 
   let currentTab = 'logs';
   let analyticsTabLoaded = false;
-  const socket = io();
+  const socket = io('https://suw-chatlogs.thenozomi.cf');
   const client = feathers();
   client.configure(feathers.socketio(socket));  
 </script>
@@ -54,7 +54,11 @@
 <Footer/>
 </main>
 
-<style>
+<style lang="scss">
+  :global {
+    @import "./scss/global.scss";
+  }
+
   .section {
     padding: 0.8rem 1.5rem;
   }
@@ -62,4 +66,5 @@
   .tabs {
     margin-top: 10px;
   }
+
 </style>

@@ -5,10 +5,11 @@
 
 	export let client, active;
 
+	const messageService = client.service('api/entries');
 	let uiState = {
 		// display options
 		compactMode: false
-	}
+	};
 
 	let entries = [];
 

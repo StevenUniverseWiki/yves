@@ -40,7 +40,7 @@
 	</div>
 </nav>
 
-<style type="text/css">
+<style>
 .nav-logo {
   width: auto !important;
   max-height: 50px !important;

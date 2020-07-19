@@ -1,9 +1,10 @@
-import svelte from 'rollup-plugin-svelte-hot'
-import resolve from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
-import livereload from 'rollup-plugin-livereload'
-import { terser } from 'rollup-plugin-terser'
-import hmr from 'rollup-plugin-hot'
+import svelte from 'rollup-plugin-svelte-hot';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import livereload from 'rollup-plugin-livereload';
+import { terser } from 'rollup-plugin-terser';
+import sveltePreprocess from 'svelte-preprocess';
+import hmr from 'rollup-plugin-hot';
 
 // Set this to true to pass the --single flag to sirv (this serves your
 // index.html for any unmatched route, which is a requirement for SPA
@@ -58,6 +59,7 @@ export default {
         //
         // https://github.com/rixo/rollup-plugin-svelte-hot#usage
       },
+      preprocess: sveltePreprocess(),
       // Warnings are normally passed straight to Rollup. You can
       // optionally handle them here, for example to squelch
       // warnings with a particular code

@@ -5,7 +5,7 @@
 
 	export let client, active;
 
-	window.messageService = client.service('api/entries');
+	const messageService = client.service('api/entries');
 
 	let query = {};
 	let entries = [];

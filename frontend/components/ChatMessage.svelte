@@ -59,5 +59,4 @@
 	.user-avatar {
 		border-radius: 6px;
 	}
-	
 </style>

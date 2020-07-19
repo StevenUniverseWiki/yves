@@ -1,0 +1,21 @@
+/* bulma base */
+@import "bulma/sass/utilities/_all.sass";
+@import "bulma/sass/base/_all.sass";
+@import "bulma/sass/helpers/_all.sass";
+@import "bulma/sass/layout/_all.sass";
+@import "bulma/sass/form/_all.sass";
+
+/* bulma elements */
+@import "bulma/sass/elements/button.sass";
+@import "bulma/sass/elements/image.sass";
+@import "bulma/sass/elements/icon.sass";
+@import "bulma/sass/elements/notification.sass";
+@import "bulma/sass/elements/other.sass";
+
+/* bulma components */
+@import "bulma/sass/components/media.sass";
+@import "bulma/sass/components/message.sass";
+@import "bulma/sass/components/modal.sass";
+@import "bulma/sass/components/navbar.sass";
+@import "bulma/sass/components/pagination.sass";
+@import "bulma/sass/components/tabs.sass";
