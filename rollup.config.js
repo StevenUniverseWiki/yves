@@ -6,6 +6,10 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import hmr from 'rollup-plugin-hot';
 
+const versionNumber = require('./package.json').version;
+const commit = String(require('child_process').execSync('git rev-parse --short HEAD')).trim();
+const version = `${versionNumber}-${commit}`;
+
 // Set this to true to pass the --single flag to sirv (this serves your
 // index.html for any unmatched route, which is a requirement for SPA
 // routers using History API / pushState)
@@ -31,7 +35,7 @@ const hot = watch && !useLiveReload
 export default {
   input: 'frontend/main.js',
   output: {
-    sourcemap: true,
+    sourcemap: !production,
     format: 'iife',
     name: 'app',
     file: 'public/build/bundle.js',
@@ -59,7 +63,12 @@ export default {
         //
         // https://github.com/rixo/rollup-plugin-svelte-hot#usage
       },
-      preprocess: sveltePreprocess(),
+      preprocess: sveltePreprocess({
+        replace: [
+          ['internal.YVES_VERSION', version],
+          ['internal.YVES_DEVELOPMENT', (process.env.NODE_ENV === 'development')]
+        ]
+      }),
       // Warnings are normally passed straight to Rollup. You can
       // optionally handle them here, for example to squelch
       // warnings with a particular code

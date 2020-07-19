@@ -13,7 +13,12 @@
 
   let currentTab = 'logs';
   let analyticsTabLoaded = false;
-  const socket = io();
+  let socket;
+  if (internal.YVES_DEVELOPMENT) {
+    socket = io('http://localhost:3030');
+  } else {
+    socket = io();
+  }
   const client = feathers();
   client.configure(feathers.socketio(socket));  
 </script>

@@ -1,5 +1,5 @@
 <script>
-	let version = '1.0.5';
+	let version = 'internal.YVES_VERSION';
 </script>
 
 <footer class="footer">

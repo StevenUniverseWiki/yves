@@ -1,3 +1,4 @@
+/*
 var CACHE_NAME = 'suw-logs-ui-v1.0.5';
 var urlsToPrefetch = [
   '/',
@@ -44,3 +45,4 @@ self.addEventListener("fetch", function(event) {
     })
   );
 });
+*/
