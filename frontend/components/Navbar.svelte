@@ -7,7 +7,7 @@
 <nav class="navbar is-light" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand">
 		<a class="navbar-item">
-			<img class="nav-logo" src="https://vignette.wikia.nocookie.net/universosteven/images/8/89/Wiki-wordmark.png/revision/latest/scale-to-width-down/120?cb=20200108003928&format=original&path-prefix=es" alt="Logo de Steven Universe Wiki" width="100" height="51">
+			<img class="nav-logo" src="https://vignette.wikia.nocookie.net/universosteven/images/8/89/Wiki-wordmark.png/revision/latest/scale-to-width-down/100?cb=20200108003928&path-prefix=es" alt="Logo de Steven Universe Wiki" width="100" height="51">
 			<strong>{title}</strong>
 		</a>
 
@@ -25,13 +25,13 @@
 			<span class="navbar-item">Accesos directos:</span>
 			<div class="navbar-item">
 				<div class="buttons">
-					<a class="button is-primary" href="https://steven-universe.fandom.com/es/wiki/Especial:Chat" target="_blank">
+					<a class="button is-primary" href="https://steven-universe.fandom.com/es/wiki/Especial:Chat" target="_blank" rel="noopener">
 						<strong>Chat</strong>
 					</a>
-					<a class="button is-light" href="https://steven-universe.fandom.com/es/wiki/Especial:Registro" target="_blank">
+					<a class="button is-light" href="https://steven-universe.fandom.com/es/wiki/Especial:Registro" target="_blank" rel="noopener">
 						Special:Log
 					</a>
-					<a class="button is-light" href="https://steven-universe.fandom.com/es/wiki/Especial:Bloquear" target="_blank">
+					<a class="button is-light" href="https://steven-universe.fandom.com/es/wiki/Especial:Bloquear" target="_blank" rel="noopener">
 						Bloquear
 					</a>
 				</div>
@@ -42,8 +42,8 @@
 
 <style type="text/css">
 .nav-logo {
-  max-width: 120px !important;
-  max-height: 51px !important;
+  width: auto !important;
+  max-height: 50px !important;
   margin-right: 10px;
 }
 </style>

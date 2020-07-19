@@ -158,17 +158,17 @@
 		<form>
 			<div class="field">
 				{#if uiState.searchIsRegex}
-					<label class="label">Expresión regular (<i>RegEx</i> literal JavaScript):</label>
+					<label class="label" for="regex">Expresión regular:</label>
 					<div class="field has-addons">
 							<p class="control is-expanded">
-							<input class="input" type="text" bind:value={uiState.textSearchField} placeholder="Pattern RegEx">
+							<input class="input" type="text" id="regex" bind:value={uiState.textSearchField} placeholder="Pattern RegEx">
 							</p>
 							<p class="control">
 							<input class="input" type="text" bind:value={uiState.searchRegexOptions} placeholder="Opciones RegEx">
 							</p>
 					</div>
 				{:else}
-					<label class="label">Texto a buscar:</label>
+					<label class="label" for="search">Texto a buscar:</label>
 					<div class="control">
 						<input class="input" id="search" type="text" name="search" bind:value={uiState.textSearchField}>
 					</div>

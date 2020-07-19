@@ -58,6 +58,15 @@ export default {
         //
         // https://github.com/rixo/rollup-plugin-svelte-hot#usage
       },
+      // Warnings are normally passed straight to Rollup. You can
+      // optionally handle them here, for example to squelch
+      // warnings with a particular code
+      onwarn: (warning, handler) => {
+        if (warning.code === 'a11y-missing-attribute') return;
+
+        // let Rollup handle all other warnings normally
+        handler(warning);
+      }
     }),
 
     // If you have external dependencies installed from

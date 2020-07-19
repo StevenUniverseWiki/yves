@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset='utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1'>
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Registros de chat</title>
-
-	<link rel='icon' type='image/png' href='/favicon.png'>
-	<link rel='stylesheet' href='https://unpkg.com/bulma@0.9.0/css/bulma.min.css'>
-	<!--<link rel='stylesheet' href='/global.css'>-->
-	<link rel='stylesheet' href='/build/bundle.css'>
-
-	<script defer src='/build/bundle.js'></script>
+	<meta name="description" content="Registros de chat de Steven Universe Wiki">
+	<meta name="theme-color" content="#000000">
+	<link rel="preconnect" href="https://unpkg.com">
+	<link rel="preconnect" href="https://vignette.wikia.nocookie.net">
+	<link rel="preconnect" href="https://static.wikia.nocookie.net">
+	<link rel="icon" type="image/png" href="/favicon.png">
+	<link rel="manifest" href="/manifest.webmanifest">
+	<link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css">
+	<link rel="stylesheet" href="/build/bundle.css">
+	<script defer src="/build/bundle.js"></script>
 	<script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
 </head>
-
 <body>
+	<noscript>
+		<b>JavaScript es requerido para la funcionalidad de esta aplicación, y parece estar deshabilitado en tu navegador. Activa JavaScript y vuelve a intentarlo.</b>
+	</noscript>
+	<script type="text/javascript">
+		if('serviceWorker' in navigator) {
+		  window.addEventListener('load', () => {
+			navigator.serviceWorker.register('/sw.js').then(() => {
+			  console.log("SW Registered");
+			}).catch((err) => {
+			  console.error('Failed to register SW:', err);
+			});				
+		  });
+		}
+	</script>
 </body>
 </html>

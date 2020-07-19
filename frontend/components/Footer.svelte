@@ -1,14 +1,14 @@
 <script>
-	let version = '1.0.3';
+	let version = '1.0.4';
 </script>
 
 <footer class="footer">
 	<div class="content has-text-centered">
 		<p>
-			<em>El contenido presentado aquí es propiedad de la comunidad de Steven Universe Wiki. Para solicitar la eliminación de contenidos, contactarse con la <a href="https://steven-universe.fandom.com/es/wiki/Steven_Universe_Wiki:Administradores" target="_blank">administración del sitio</a>.</em>
+			<em>El contenido presentado aquí es propiedad de la comunidad de Steven Universe Wiki. Para solicitar la eliminación de contenidos, contactarse con la <a href="https://steven-universe.fandom.com/es/wiki/Steven_Universe_Wiki:Administradores" target="_blank" rel="noopener">administración del sitio</a>.</em>
 		</p>
 		<p>
-			<strong>SUW-Logs</strong> - using yves {version} - Style: <a href="https://bulma.io/" target="_blank">Bulma CSS</a>.
+			<strong>SUW-Logs</strong> - using yves {version} - Style: <a href="https://bulma.io/" target="_blank" rel="noopener">Bulma CSS</a>.
 		</p>
 	</div>
 </footer>

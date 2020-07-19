@@ -12,6 +12,7 @@
   import feathers from '@feathersjs/client';
 
   let currentTab = 'logs';
+  let analyticsTabLoaded = false;
   const socket = io();
   const client = feathers();
   client.configure(feathers.socketio(socket));  
@@ -23,19 +24,19 @@
   <div class="container">
   <div class="tabs is-fullwidth">
     <ul>
-      <li class:is-active="{currentTab === 'logs'}" on:click="{() => currentTab = 'logs'}">
+      <li class:is-active="{currentTab === 'logs'}" on:click="{() => currentTab = 'logs' }">
         <a>
           <span class="icon is-small"><ion-icon name="document-text-outline"></ion-icon></span>
           <span>Buscar mensajes</span>
         </a>
       </li>
-      <li class:is-active="{currentTab === 'live-chat'}" on:click="{() => currentTab = 'live-chat'}">
+      <li class:is-active="{currentTab === 'live-chat'}" on:click="{() => currentTab = 'live-chat' }">
         <a>
           <span class="icon is-small"><ion-icon name="chatbubbles-outline"></ion-icon></span>
           <span>Chat en directo</span>
         </a>
       </li>
-      <li class:is-active="{currentTab === 'analytics'}" on:click="{() => currentTab = 'analytics'}">
+      <li class:is-active="{currentTab === 'analytics'}" on:click="{() => { currentTab = 'analytics'; analyticsTabLoaded = true }}">
         <a>
           <span class="icon is-small"><ion-icon name="analytics-outline"></ion-icon></span>
           <span>Estadísticas</span>
@@ -45,7 +46,9 @@
   </div>
   <LogSearchView client={client} active={currentTab === 'logs'} />
   <LiveChatView client={client} active={currentTab === 'live-chat'} />
-  <AnalyticsView active={currentTab === 'analytics'} />
+  {#if analyticsTabLoaded}
+    <AnalyticsView active={currentTab === 'analytics'} />
+  {/if}
 </div>
 </section>
 <Footer/>
