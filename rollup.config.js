@@ -6,9 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import hmr from 'rollup-plugin-hot';
 
-const versionNumber = require('./package.json').version;
-const commit = String(require('child_process').execSync('git rev-parse --short HEAD')).trim();
-const version = `${versionNumber}-${commit}`;
+const version = require('./package.json').version;
 
 // Set this to true to pass the --single flag to sirv (this serves your
 // index.html for any unmatched route, which is a requirement for SPA
