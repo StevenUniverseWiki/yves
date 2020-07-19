@@ -13,7 +13,7 @@
 
   let currentTab = 'logs';
   let analyticsTabLoaded = false;
-  const socket = io('https://suw-chatlogs.thenozomi.cf');
+  const socket = io();
   const client = feathers();
   client.configure(feathers.socketio(socket));  
 </script>
