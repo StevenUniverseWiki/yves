@@ -1,6 +1,6 @@
 <script>
 	import { beforeUpdate } from 'svelte';
-	import tagParser from 'js-bbcode-parser';
+	// import tagParser from 'js-bbcode-parser';
 	import { addMinutes, addSeconds, lightFormat, formatDistance } from 'date-fns';
 	import { es } from 'date-fns/locale';
 
@@ -22,9 +22,9 @@
 	    	<strong>&lt;{user}&gt;</strong>: <ion-icon name="trash"></ion-icon> <i>[Este elemento ha sido eliminado. Razón: {deletionReason}]</i>
 	    {:else}
 		  	{#if event === 'MESSAGE'}
-			    <strong>&lt;{user}&gt;</strong>: {@html tagParser.parse(text || '')}
+			    <strong>&lt;{user}&gt;</strong>: {text}
 		  	{:else if event === 'ME'}
-			    <strong>&lt;{user}&gt;</strong>: <i>* {user} {@html tagParser.parse(text || '')}</i>
+			    <strong>&lt;{user}&gt;</strong>: <i>* {user} {text}</i>
 			{:else if event === 'JOIN'}
 				~ {user} ha entrado al chat. ~
 			{:else if event === 'PART'}

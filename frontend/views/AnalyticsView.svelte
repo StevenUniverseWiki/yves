@@ -8,7 +8,12 @@
 
 <main hidden={!active}>
 	<section class="analytics">
-		<p>Esta sección provee información sobre diferentes métricas de uso y rendimiento del chat en el tiempo, representadas como gráficos.</p>
+	<div class="notification is-info">
+		<span class="icon is-medium">
+			<ion-icon size="large" name="information-circle" role="img" class="md icon-large hydrated" aria-label="information circle"></ion-icon>
+		</span>
+		<span class="notif-message">Esta sección provee información sobre diferentes métricas de uso y rendimiento del chat en el tiempo, representadas como gráficos.</span>
+	</div>
 		<br />
 
 		<center>
@@ -18,10 +23,16 @@
 			<br />
 			<Chart id="1ae95d7f-0f87-4fc9-9b33-0dfe2a7fa85a" thene={theme} />
 			<br />
-			<Chart id="4abaf4fc-4551-4015-84d6-9993764ce3dc" theme={theme} />
-			<br />
 			<Chart id="350f22d4-ae63-4cf8-a222-d36df924ff0c" theme={theme} />
 			<br />
 		</center>
 	</section>
 </main>
+
+<style>
+	.notif-message {
+	    position: relative;
+	    bottom: 10px !important;
+	    margin-left: 6px;
+	}
+</style>

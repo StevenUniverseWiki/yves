@@ -3,7 +3,7 @@
 	import axios from 'axios';
 	import { addMinutes, format } from 'date-fns';
 	import { es } from 'date-fns/locale';
-	import tagParser from 'js-bbcode-parser';
+	// import tagParser from 'js-bbcode-parser';
 	export let timestamp, username, message, isRoleplay, deleted, deletionReason;
 
 	let userAvatar = '';
@@ -37,9 +37,9 @@
 	    		<ion-icon name="trash"></ion-icon> <i>Este elemento ha sido eliminado. Razón: {deletionReason}</i>
 	    	{:else}
 		    	{#if isRoleplay}
-		    		<i>* {username} {@html tagParser.parse(message || '')}</i>
+		    		<i>* {username} {message}</i>
 		    	{:else}
-		    		{@html tagParser.parse(message || '')}
+		    		{message}
 		    	{/if}
 	    	{/if}
 	    </div>
