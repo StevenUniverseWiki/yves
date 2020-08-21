@@ -1,5 +1,4 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
-
 const getEntry = require('../../hooks/get-entry');
 
 exports.searchRegex = function () {
@@ -8,11 +7,13 @@ exports.searchRegex = function () {
     const searchableFields = ['text', 'banReason', 'user', 'targetUser'];
     for (let field in query) {
       if (searchableFields.includes(field) && query[field].$search && field.indexOf('$') == -1) {
-        query[field] = { $regex: new RegExp(query[field].$search.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&'), query[field].$searchCaseSensitive ? '': 'i') }
+        query[field] = {
+          $regex: new RegExp(query[field].$search.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&'), query[field].$searchCaseSensitive ? '': 'i')
+        }
       }
     }
-    hook.params.query = query
-    return hook
+    hook.params.query = query;
+    return hook;
   }
 }
 

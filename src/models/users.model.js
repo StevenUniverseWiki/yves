@@ -8,17 +8,7 @@ module.exports = function (app) {
   const schema = new mongooseClient.Schema({
     email: { type: String, unique: true, lowercase: true },
     password: { type: String },
-    discordId: { type: String },
-    discordTag: { type: String },
     username: { type: String },
-    avatar: { type: String },
-    email: { type: String },
-    roles: [{
-      name: String,
-      permissions: { type: Array, "default": [] }
-    }],
-    permissions: { type: Array, "default": [] }
-
   }, {
     timestamps: true
   });
