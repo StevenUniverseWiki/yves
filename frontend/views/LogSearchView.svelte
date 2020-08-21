@@ -135,6 +135,7 @@
 		uiState.nextLoading = true;
 		sendQuery().then(() => {
 			uiState.nextLoading = false;
+			document.getElementById("searchTop").scrollIntoView();
 		});
 	}
 
@@ -362,7 +363,7 @@
 			Modo compacto (útil al copiar varios mensajes)
 			</label>
 
-			<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+			<nav class="pagination is-centered" role="navigation" aria-label="pagination" id="searchTop">
 			  <button class="button pagination-previous" class:is-loading={uiState.prevLoading} on:click={paginationPrevious} disabled={uiState.prevDisabled}>Anterior</button>
 			  <button class="button pagination-next" class:is-loading={uiState.nextLoading} on:click={paginationNext} disabled={uiState.nextDisabled}>Siguiente</button>
 			</nav>
