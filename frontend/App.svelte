@@ -11,16 +11,12 @@
   import io from 'socket.io-client';
   import feathers from '@feathersjs/client';
 
+  const socket = io('internal.YVES_ENV' === 'development' ? 'http://localhost:3030': '');
+  const client = feathers();
+  client.configure(feathers.socketio(socket));
+
   let currentTab = 'logs';
   let analyticsTabLoaded = false;
-  let socket;
-  if (internal.YVES_DEVELOPMENT) {
-    socket = io('http://localhost:3030');
-  } else {
-    socket = io();
-  }
-  const client = feathers();
-  client.configure(feathers.socketio(socket));  
 </script>
 
 <main>

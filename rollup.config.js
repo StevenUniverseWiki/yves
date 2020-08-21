@@ -64,7 +64,7 @@ export default {
       preprocess: sveltePreprocess({
         replace: [
           ['internal.YVES_VERSION', version],
-          ['internal.YVES_DEVELOPMENT', (process.env.NODE_ENV === 'development')]
+          ['internal.YVES_ENV', process.env.NODE_ENV]
         ]
       }),
       // Warnings are normally passed straight to Rollup. You can

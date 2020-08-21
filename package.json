@@ -23,10 +23,10 @@
     "node": "^14.x"
   },
   "scripts": {
-    "api:dev": "nodemon src/",
+    "api:dev": "cross-env NODE_ENV=development nodemon src/",
     "start": "cross-env NODE_ENV=production node src/",
     "build": "rollup -c",
-    "frontend:serve": "cross-env NOLLUP=1 nollup -c --hot --port 3031 --content-base ./public",
+    "frontend:serve": "cross-env NODE_ENV=development NOLLUP=1 nollup -c --hot --port 3031 --content-base ./public",
     "dev": "npm-run-all --parallel api:dev frontend:serve",
     "mocha": "mocha test/ --recursive --exit",
     "api:lint": "eslint src/. test/. --config .eslintrc.json",
