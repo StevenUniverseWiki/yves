@@ -127,6 +127,7 @@
 		uiState.prevLoading = true;
 		sendQuery().then(() => {
 			uiState.prevLoading = false;
+			document.getElementById("searchTop").scrollIntoView();
 		});
 	}
 

@@ -8,39 +8,39 @@ dependencies:
   '@feathersjs/feathers': 4.5.8
   '@feathersjs/socketio': 4.5.8
   '@feathersjs/transport-commons': 4.5.8
-  axios: 0.19.2
   compression: 1.7.4
   core-js: 3.6.5
   cors: 2.8.5
   cross-env: 7.0.2
   dotenv: 8.2.0
-  feathers-mongoose: 8.3.1_mongoose@5.9.29
+  feathers-mongoose: 8.3.1_mongoose@5.10.0
   form-data: 3.0.0
-  helmet: 4.0.0
+  helmet: 4.1.0
   mongodb-core: 3.2.7
-  mongoose: 5.9.29_mongoose@5.9.29
+  mongoose: 5.10.0_mongoose@5.10.0
   serve-favicon: 2.5.0
   socket.io-client: 2.3.0
   winston: 3.3.3
 devDependencies:
-  '@rollup/plugin-commonjs': 15.0.0_rollup@2.25.0
-  '@rollup/plugin-node-resolve': 9.0.0_rollup@2.25.0
+  '@rollup/plugin-commonjs': 15.0.0_rollup@2.26.4
+  '@rollup/plugin-node-resolve': 9.0.0_rollup@2.26.4
+  axios: 0.20.0
   bulma: 0.9.0
   date-fns: 2.15.0
   js-bbcode-parser: 3.0.4
   mocha: 8.1.1
   node-sass: 4.14.1
   nodemon: 2.0.4
-  nollup: 0.13.4_rollup@2.25.0
+  nollup: 0.13.6_rollup@2.26.4
   npm-run-all: 4.1.5
   postcss: 7.0.32
-  rollup: 2.25.0
-  rollup-plugin-hot: 0.1.0_rollup@2.25.0
+  rollup: 2.26.4
+  rollup-plugin-hot: 0.1.0_rollup@2.26.4
   rollup-plugin-livereload: 1.3.0
-  rollup-plugin-svelte-hot: 0.10.0_rollup@2.25.0+svelte@3.24.1
-  rollup-plugin-terser: 7.0.0_rollup@2.25.0
+  rollup-plugin-svelte-hot: 0.10.0_rollup@2.26.4+svelte@3.24.1
+  rollup-plugin-terser: 7.0.0_rollup@2.26.4
   svelte: 3.24.1
-  svelte-preprocess: 4.0.12_f25248ef666dc84b2cf42dfcbaaf5819
+  svelte-preprocess: 4.1.1_f25248ef666dc84b2cf42dfcbaaf5819
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.10.4:
@@ -212,16 +212,16 @@ packages:
       node: '>= 10'
     resolution:
       integrity: sha512-feECInVjgXdNxlXImdhB72+4Q89G4NXQTXcBmtGmI7tJtDFN+5cak23t7vp2EvNUlwexaYGL3DZMVD/KxYU3yA==
-  /@rollup/plugin-commonjs/15.0.0_rollup@2.25.0:
+  /@rollup/plugin-commonjs/15.0.0_rollup@2.26.4:
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.25.0
+      '@rollup/pluginutils': 3.1.0_rollup@2.26.4
       commondir: 1.0.1
       estree-walker: 2.0.1
       glob: 7.1.6
       is-reference: 1.2.1
       magic-string: 0.25.7
       resolve: 1.17.0
-      rollup: 2.25.0
+      rollup: 2.26.4
     dev: true
     engines:
       node: '>= 8.0.0'
@@ -229,15 +229,15 @@ packages:
       rollup: ^2.22.0
     resolution:
       integrity: sha512-8uAdikHqVyrT32w1zB9VhW6uGwGjhKgnDNP4pQJsjdnyF4FgCj6/bmv24c7v2CuKhq32CcyCwRzMPEElaKkn0w==
-  /@rollup/plugin-node-resolve/9.0.0_rollup@2.25.0:
+  /@rollup/plugin-node-resolve/9.0.0_rollup@2.26.4:
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.25.0
+      '@rollup/pluginutils': 3.1.0_rollup@2.26.4
       '@types/resolve': 1.17.1
       builtin-modules: 3.1.0
       deepmerge: 4.2.2
       is-module: 1.0.0
       resolve: 1.17.0
-      rollup: 2.25.0
+      rollup: 2.26.4
     dev: true
     engines:
       node: '>= 10.0.0'
@@ -245,12 +245,12 @@ packages:
       rollup: ^1.20.0||^2.0.0
     resolution:
       integrity: sha512-gPz+utFHLRrd41WMP13Jq5mqqzHL3OXrfj3/MkSyB6UBIcuNt9j60GCbarzMzdf1VHFpOxfQh/ez7wyadLMqkg==
-  /@rollup/pluginutils/3.1.0_rollup@2.25.0:
+  /@rollup/pluginutils/3.1.0_rollup@2.26.4:
     dependencies:
       '@types/estree': 0.0.39
       estree-walker: 1.0.1
       picomatch: 2.2.2
-      rollup: 2.25.0
+      rollup: 2.26.4
     dev: true
     engines:
       node: '>= 8.0.0'
@@ -333,6 +333,10 @@ packages:
   /@types/node/14.0.27:
     resolution:
       integrity: sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
+  /@types/node/14.6.0:
+    dev: true
+    resolution:
+      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
   /@types/pug/2.0.4:
     dev: true
     resolution:
@@ -353,7 +357,7 @@ packages:
       integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==
   /@types/sass/1.16.0:
     dependencies:
-      '@types/node': 14.0.27
+      '@types/node': 14.6.0
     dev: true
     resolution:
       integrity: sha512-2XZovu4NwcqmtZtsBR5XYLw18T8cBCnU2USFHTnYLLHz9fkhnoEMoDsqShJIOFsFhn5aJHjweiUUdTrDGujegA==
@@ -560,12 +564,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3YDiu347mtVtjpyV3u5kVqQLP242c06zwDOgpeRnybmXlYYsLbtTrUBUm8i8srONt+FWobl5aibnU1030PeeuA==
-  /axios/0.19.2:
+  /axios/0.20.0:
     dependencies:
-      follow-redirects: 1.5.10
-    dev: false
+      follow-redirects: 1.13.0
+    dev: true
     resolution:
-      integrity: sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+      integrity: sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
   /backo2/1.0.2:
     dev: false
     resolution:
@@ -1544,12 +1548,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Utm6CdzT+6xsDk2m8S6uL8VHxNwI6Jub+e9NYTcAms28T84pTa25GJQV9j0CY0N1rM8hK4x6grpF2BQf+2qwVA==
-  /feathers-mongoose/8.3.1_mongoose@5.9.29:
+  /feathers-mongoose/8.3.1_mongoose@5.10.0:
     dependencies:
       '@feathersjs/adapter-commons': 4.5.2
       '@feathersjs/commons': 4.5.5
       '@feathersjs/errors': 4.5.5
-      mongoose: 5.9.29_mongoose@5.9.29
+      mongoose: 5.10.0_mongoose@5.10.0
     dev: false
     engines:
       node: '>= 6'
@@ -1620,14 +1624,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GRnmB5gPyJpAhTQdSZTSp9uaPSvl09KoYcMQtsB9rQoOmzs9dH6ffeccH+Z+cv6P68Hu5bC6JjRh4Ah/mHSNRw==
-  /follow-redirects/1.5.10:
-    dependencies:
-      debug: 3.1.0
-    dev: false
+  /follow-redirects/1.13.0:
+    dev: true
     engines:
       node: '>=4.0'
     resolution:
-      integrity: sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
+      integrity: sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==
   /forever-agent/0.6.1:
     dev: true
     resolution:
@@ -1884,12 +1886,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
-  /helmet/4.0.0:
+  /helmet/4.1.0:
     dev: false
     engines:
       node: '>=10.0.0'
     resolution:
-      integrity: sha512-HyoRKKHhWhO6+EBfgRLkuZR4/+NXc1nJB7x0bWwW89i9eoPciK0qUqyZNOA/zowpgrW9C4+J5toqMkZrpBOlkg==
+      integrity: sha512-KWy75fYN8hOG2Rhl8e5B3WhOzb0by1boQum85TiddIE9iu6gV+TXbUjVC17wfej0o/ZUpqB9kxM0NFCZRMzf+Q==
   /hosted-git-info/2.8.8:
     dev: true
     resolution:
@@ -2646,7 +2648,7 @@ packages:
       saslprep: 1.0.3
     resolution:
       integrity: sha512-WypKdLxFNPOH/Jy6i9z47IjG2wIldA54iDZBmHMINcgKOUcWJh8og+Wix76oGd7EyYkHJKssQ2FAOw5Su/n4XQ==
-  /mongodb/3.5.10:
+  /mongodb/3.6.0:
     dependencies:
       bl: 2.2.0
       bson: 1.1.5
@@ -2659,21 +2661,21 @@ packages:
     optionalDependencies:
       saslprep: 1.0.3
     resolution:
-      integrity: sha512-p/C48UvTU/dr/PQEDKfb9DsCVDJWXGmdJNFC+u5FPmTQVtog69X6D8vrWHz+sJx1zJnd96sjdh9ueo7bx2ILTw==
-  /mongoose-legacy-pluralize/1.0.2_mongoose@5.9.29:
+      integrity: sha512-/XWWub1mHZVoqEsUppE0GV7u9kanLvHxho6EvBxQbShXTKYF9trhZC2NzbulRGeG7xMJHD8IOWRcdKx5LPjAjQ==
+  /mongoose-legacy-pluralize/1.0.2_mongoose@5.10.0:
     dependencies:
-      mongoose: 5.9.29_mongoose@5.9.29
+      mongoose: 5.10.0_mongoose@5.10.0
     dev: false
     peerDependencies:
       mongoose: '*'
     resolution:
       integrity: sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
-  /mongoose/5.9.29_mongoose@5.9.29:
+  /mongoose/5.10.0_mongoose@5.10.0:
     dependencies:
       bson: 1.1.5
       kareem: 2.3.1
-      mongodb: 3.5.10
-      mongoose-legacy-pluralize: 1.0.2_mongoose@5.9.29
+      mongodb: 3.6.0
+      mongoose-legacy-pluralize: 1.0.2_mongoose@5.10.0
       mpath: 0.7.0
       mquery: 3.2.2
       ms: 2.1.2
@@ -2687,7 +2689,7 @@ packages:
     peerDependencies:
       mongoose: '*'
     resolution:
-      integrity: sha512-lNkWoGdXkI7no3cTXHnHYcAhjB0j/kM5cmdLO07axcr8DVtTWz0ZOHsWMikUkWWbMmw4aOGejwR4WT3WvpJk1A==
+      integrity: sha512-5itAvBMVDG4+zTDtuLg/IyoTxEMgvpOSHnigQ9Cyh8LR4BEgMAChJj7JSaGkg+tr1AjCSY9DgSdU8bHqCOoxXg==
   /mpath/0.7.0:
     dev: false
     engines:
@@ -2793,9 +2795,9 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-Ltced+hIfTmaS28Zjv1BM552oQ3dbwPqI4+zI0SLgq+wpJhSyqgYude/aZa/3i31VCQWMfXJVxvu86abcam3uQ==
-  /nollup/0.12.2_rollup@2.25.0:
+  /nollup/0.12.2_rollup@2.26.4:
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.25.0
+      '@rollup/pluginutils': 3.1.0_rollup@2.26.4
       acorn: 7.3.1
       chokidar: 3.4.1
       convert-source-map: 1.7.0
@@ -2813,9 +2815,9 @@ packages:
       rollup: '*'
     resolution:
       integrity: sha512-6woSoPmP06icHfp8D/CAOUXgSBbpm2mh4y1h7WtLCPyYuHnEV3dxIXS+DHsxLPWHs9oFupS2cMoLA1RfhSZ71A==
-  /nollup/0.13.4_rollup@2.25.0:
+  /nollup/0.13.6_rollup@2.26.4:
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.25.0
+      '@rollup/pluginutils': 3.1.0_rollup@2.26.4
       acorn: 7.4.0
       chokidar: 3.4.2
       convert-source-map: 1.7.0
@@ -2826,12 +2828,13 @@ packages:
       magic-string: 0.25.7
       mime-types: 2.1.27
       source-map: 0.5.7
+      source-map-fast: /source-map/0.7.3
     dev: true
     hasBin: true
     peerDependencies:
       rollup: '*'
     resolution:
-      integrity: sha512-9TNk9eMdS/ZbkROJz7xnqfkkl5W6Y5BSGnqlWeU2JRaUmT6MdI4U95Cv5vpg/DbvXK3tfIuZdurmUF/ETzAXHw==
+      integrity: sha512-Id3oEEgajwDdlXl9yqjvtj/Q2tOdjgSKw24DhBwXHUo9NGijXcy46qmbhZfL0BBvN3n934HiB8RgnJ4lG1olxg==
   /nopt/1.0.10:
     dependencies:
       abbrev: 1.1.1
@@ -3478,21 +3481,21 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==
-  /rollup-plugin-hot-nollup/0.1.1_rollup@2.25.0:
+  /rollup-plugin-hot-nollup/0.1.1_rollup@2.26.4:
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.25.0
+      '@rollup/pluginutils': 3.1.0_rollup@2.26.4
     dev: true
     peerDependencies:
       rollup: '*'
     resolution:
       integrity: sha512-x+SCqvHQKJ+SfiFM4JxaR4ZwuUYN+RTQ6pIUu34SpSC13e4p/dNS8kRLQY9t6ZHcJGvvB0dZkD/udDT4OXXoQA==
-  /rollup-plugin-hot/0.1.0_rollup@2.25.0:
+  /rollup-plugin-hot/0.1.0_rollup@2.26.4:
     dependencies:
       cors: 2.8.5
       express: 4.17.1
       mime-types: 2.1.27
-      rollup: 2.25.0
-      rollup-plugin-hot-nollup: 0.1.1_rollup@2.25.0
+      rollup: 2.26.4
+      rollup-plugin-hot-nollup: 0.1.1_rollup@2.26.4
       rollup-pluginutils: 2.8.2
       ws: 7.3.1
     dev: true
@@ -3506,28 +3509,28 @@ packages:
     dev: true
     resolution:
       integrity: sha512-abyqXaB21+nFHo+vJULBqfzNx6zXABC19UyvqgDfdoxR/8pFAd041GO+GIUe8ZYC2DbuMUmioh1Lvbk14YLZgw==
-  /rollup-plugin-svelte-hot/0.10.0_rollup@2.25.0+svelte@3.24.1:
+  /rollup-plugin-svelte-hot/0.10.0_rollup@2.26.4+svelte@3.24.1:
     dependencies:
       require-relative: 0.8.7
-      rollup: 2.25.0
-      rollup-plugin-hot-nollup: 0.1.1_rollup@2.25.0
+      rollup: 2.26.4
+      rollup-plugin-hot-nollup: 0.1.1_rollup@2.26.4
       rollup-pluginutils: 2.8.2
       sourcemap-codec: 1.4.8
       svelte: 3.24.1
       svelte-hmr: 0.10.1_svelte@3.24.1
     dev: true
     optionalDependencies:
-      nollup: 0.12.2_rollup@2.25.0
+      nollup: 0.12.2_rollup@2.26.4
     peerDependencies:
       rollup: '>=0.60.0'
       svelte: '>=3.19.0'
     resolution:
       integrity: sha512-taHP/kS4GnJTeJ3nXCqerOVKh6mEGXffTR6XYzd+WkXCyAJADFrWjExFYshV54GHyKv69Gdf7eGBMIL6OWSPaQ==
-  /rollup-plugin-terser/7.0.0_rollup@2.25.0:
+  /rollup-plugin-terser/7.0.0_rollup@2.26.4:
     dependencies:
       '@babel/code-frame': 7.10.4
       jest-worker: 26.3.0
-      rollup: 2.25.0
+      rollup: 2.26.4
       serialize-javascript: 4.0.0
       terser: 5.0.0
     dev: true
@@ -3541,7 +3544,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==
-  /rollup/2.25.0:
+  /rollup/2.26.4:
     dev: true
     engines:
       node: '>=10.0.0'
@@ -3549,7 +3552,7 @@ packages:
     optionalDependencies:
       fsevents: 2.1.3
     resolution:
-      integrity: sha512-S+OzytEaqcLugXAqesmJMb1Q16I6h1ps8F3AOX7yMZ1OkkuOATJH/x2lqJJtjQo2/d+0J4j62M2RbvgmxvOuCw==
+      integrity: sha512-6+qsGuP0MXGd7vlYmk72utm1MrgZj5GfXibGL+cRkKQ9+ZL/BnFThDl0D5bcl7AqlzMjAQXRAwZX1HVm22M/4Q==
   /safe-buffer/5.1.1:
     dev: false
     resolution:
@@ -3792,6 +3795,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
+  /source-map/0.7.3:
+    dev: true
+    engines:
+      node: '>= 8'
+    resolution:
+      integrity: sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
   /sourcemap-codec/1.4.8:
     dev: true
     resolution:
@@ -4067,7 +4076,7 @@ packages:
       svelte: '>=3.19.0'
     resolution:
       integrity: sha512-WRKVeR+iRsDzyM0nH+Q9TchnVV+WfeOoJNxqhnGuFmO01ZvnxDfWXD4UvbWdrtGUe/ijPK8erFqQMAHkNvPSww==
-  /svelte-preprocess/4.0.12_f25248ef666dc84b2cf42dfcbaaf5819:
+  /svelte-preprocess/4.1.1_f25248ef666dc84b2cf42dfcbaaf5819:
     dependencies:
       '@types/pug': 2.0.4
       '@types/sass': 1.16.0
@@ -4116,7 +4125,7 @@ packages:
         optional: true
     requiresBuild: true
     resolution:
-      integrity: sha512-nAzVj5M98YzxdoDh9F9NuIaGMn8kjf8SnjRB2IduZIRYjrS5qkrGeHR2ba+CnOUOlMTZ/rQ2jpGeCwnyjgqr5Q==
+      integrity: sha512-fCnq15SY0MYd70as0z0IcdtU6a6m0RTFdWViWSdV7styI/yp6SVkMinpFR7GbQJR3StzZ/9FEmroSiYYzc3VZA==
   /svelte/3.24.1:
     dev: true
     engines:
@@ -4543,7 +4552,7 @@ specifiers:
   '@feathersjs/transport-commons': ^4.5.8
   '@rollup/plugin-commonjs': 15.0.0
   '@rollup/plugin-node-resolve': ^9.0.0
-  axios: ^0.19.2
+  axios: 0.20.0
   bulma: ^0.9.0
   compression: ^1.7.4
   core-js: ^3.6.4
@@ -4553,17 +4562,17 @@ specifiers:
   dotenv: ^8.2.0
   feathers-mongoose: ^8.3.1
   form-data: ^3.0.0
-  helmet: ^4.0.0
+  helmet: ^4.1.0
   js-bbcode-parser: ^3.0.4
   mocha: ^8.1.1
   mongodb-core: ^3.2.7
-  mongoose: ^5.9.29
+  mongoose: ^5.10.0
   node-sass: ^4.14.1
   nodemon: ^2.0.2
-  nollup: ^0.13.4
+  nollup: 0.13.6
   npm-run-all: ^4.1.5
   postcss: ^7.0.32
-  rollup: ^2.25.0
+  rollup: 2.26.4
   rollup-plugin-hot: ^0.1.0
   rollup-plugin-livereload: ^1.0.0
   rollup-plugin-svelte-hot: ^0.10.0
@@ -4571,5 +4580,5 @@ specifiers:
   serve-favicon: ^2.5.0
   socket.io-client: ^2.3.0
   svelte: ~3.24.1
-  svelte-preprocess: ^4.0.12
+  svelte-preprocess: ^4.1.1
   winston: ^3.3.3
