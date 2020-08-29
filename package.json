@@ -30,7 +30,7 @@
     "dev": "npm-run-all --parallel api:dev frontend:serve",
     "mocha": "mocha test/ --recursive --exit",
     "api:lint": "eslint src/. test/. --config .eslintrc.json",
-    "postinstall": "cd frontend && npm i",
+    "postinstall": "cd frontend && npm i -D",
     "test": "npm run api:lint && npm run mocha"
   },
   "standard": {
