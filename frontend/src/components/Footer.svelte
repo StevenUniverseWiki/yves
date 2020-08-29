@@ -1,5 +1,5 @@
 <script>
-	let version = 'internal.YVES_VERSION';
+	const version = import.meta.env.VITE_YVES_VERSION;
 </script>
 
 <footer class="footer">
