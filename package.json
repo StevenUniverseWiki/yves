@@ -1,7 +1,7 @@
 {
   "name": "yves",
   "description": "o w o",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "homepage": "",
   "private": true,
   "main": "src",
@@ -25,11 +25,12 @@
   "scripts": {
     "api:dev": "nodemon src/",
     "start": "cross-env NODE_ENV=production node src/",
-    "build": "rollup -c",
-    "frontend:serve": "cross-env NOLLUP=1 nollup -c --hot --port 3031 --content-base ./public",
+    "build": "cd frontend && npm run build",
+    "frontend:serve": "cd frontend && npm run dev",
     "dev": "npm-run-all --parallel api:dev frontend:serve",
     "mocha": "mocha test/ --recursive --exit",
     "api:lint": "eslint src/. test/. --config .eslintrc.json",
+    "postinstall": "cd frontend && npm i",
     "test": "npm run api:lint && npm run mocha"
   },
   "standard": {
@@ -41,7 +42,6 @@
   "dependencies": {
     "@feathersjs/authentication": "^4.5.8",
     "@feathersjs/authentication-local": "^4.5.8",
-    "@feathersjs/client": "^4.5.8",
     "@feathersjs/configuration": "^4.5.8",
     "@feathersjs/errors": "^4.5.8",
     "@feathersjs/express": "^4.5.8",
@@ -58,29 +58,12 @@
     "helmet": "^4.1.0",
     "mongodb-core": "^3.2.7",
     "mongoose": "^5.10.0",
-    "serve-favicon": "^2.5.0",
     "socket.io-client": "^2.3.0",
     "winston": "^3.3.3"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "15.0.0",
-    "@rollup/plugin-node-resolve": "^9.0.0",
-    "axios": "0.20.0",
-    "bulma": "^0.9.0",
-    "date-fns": "^2.15.0",
-    "js-bbcode-parser": "^3.0.4",
-    "mocha": "^8.1.1",
-    "node-sass": "^4.14.1",
+    "mocha": "^8.1.3",
     "nodemon": "^2.0.2",
-    "nollup": "0.13.6",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^7.0.32",
-    "rollup": "2.26.4",
-    "rollup-plugin-hot": "^0.1.0",
-    "rollup-plugin-livereload": "^1.0.0",
-    "rollup-plugin-svelte-hot": "^0.10.0",
-    "rollup-plugin-terser": "^7.0.0",
-    "svelte": "~3.24.1",
-    "svelte-preprocess": "^4.1.1"
+    "npm-run-all": "^4.1.5"
   }
 }

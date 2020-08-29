@@ -9,11 +9,36 @@
   import AnalyticsView from './views/AnalyticsView.svelte';
 
   import io from 'socket.io-client';
-  import feathers from '@feathersjs/client';
 
-  const socket = io('internal.YVES_ENV' === 'development' ? 'http://localhost:3030': '');
-  const client = feathers();
-  client.configure(feathers.socketio(socket));
+  const socket = io(import.meta.env.DEV ? 'http://localhost:3030': '');
+  let client;
+  // TODO: Do something about this. @feathersjs/socketio-client crashes on development, and @feathersjs/client crashes during prod build. So... temporary (?) hack.
+  import feathers from '@feathersjs/feathers';
+  import socketio from '@feathersjs/socketio-client';
+  client = feathers();
+  client.configure(socketio(socket));
+  /*
+    import('@feathersjs/client').then((feathers) => {
+      client = feathers.default();
+      client.configure(feathers.default.socketio(socket));      
+    });
+
+  if (import.meta.env.DEV) {
+    import('@feathersjs/client').then((feathers) => {
+      client = feathers.default();
+      client.configure(feathers.default.socketio(socket));      
+    });
+  } else {
+    Promise.all([
+      import('@feathersjs/feathers'),
+      import('@feathersjs/socketio-client')
+    ]).then((libs) => {
+      const feathers = libs[0].default,
+        socketio = libs[1].default;
+      client = feathers();
+      client.configure(socketio(socket));
+    });
+  }*/
 
   let currentTab = 'logs';
   let analyticsTabLoaded = false;
@@ -45,21 +70,19 @@
       </li>
     </ul>
   </div>
-  <LogSearchView client={client} active={currentTab === 'logs'} />
-  <LiveChatView client={client} active={currentTab === 'live-chat'} />
-  {#if analyticsTabLoaded}
-    <AnalyticsView active={currentTab === 'analytics'} />
+  {#if client}
+    <LogSearchView client={client} active={currentTab === 'logs'} />
+    <LiveChatView client={client} active={currentTab === 'live-chat'} />
+    {#if analyticsTabLoaded}
+      <AnalyticsView active={currentTab === 'analytics'} />
+    {/if}
   {/if}
 </div>
 </section>
 <Footer/>
 </main>
 
-<style lang="scss">
-  :global {
-    @import "./scss/global.scss";
-  }
-
+<style>
   .section {
     padding: 0.8rem 1.5rem;
   }
