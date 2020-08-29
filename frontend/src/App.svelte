@@ -13,11 +13,17 @@
   const socket = io(import.meta.env.DEV ? 'http://localhost:3030': '');
   let client;
   // TODO: Do something about this. @feathersjs/socketio-client crashes on development, and @feathersjs/client crashes during prod build. So... temporary (?) hack.
+  import feathers from '@feathersjs/feathers';
+  import socketio from '@feathersjs/socketio-client';
+  client = feathers();
+  client.configure(socketio(socket));
+  /*
     import('@feathersjs/client').then((feathers) => {
       client = feathers.default();
       client.configure(feathers.default.socketio(socket));      
     });
-  /*if (import.meta.env.DEV) {
+
+  if (import.meta.env.DEV) {
     import('@feathersjs/client').then((feathers) => {
       client = feathers.default();
       client.configure(feathers.default.socketio(socket));      
