@@ -49,7 +49,7 @@ module.exports = function(app) {
   });
 
   // publish new messages to channel
-  app.service('api/entries').publish((data, hook) => {
+  app.service('entries').publish((data, hook) => {
     return app.channel('chat-messages');
   });
 

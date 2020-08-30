@@ -23,15 +23,10 @@
     "node": "^14.x"
   },
   "scripts": {
-    "api:dev": "nodemon src/",
+    "dev": "nodemon src/",
     "start": "cross-env NODE_ENV=production node src/",
-    "build": "cd frontend && npm run build",
-    "frontend:serve": "cd frontend && npm run dev",
-    "dev": "npm-run-all --parallel api:dev frontend:serve",
-    "mocha": "mocha test/ --recursive --exit",
-    "api:lint": "eslint src/. test/. --config .eslintrc.json",
-    "postinstall": "cd frontend && npm i -D",
-    "test": "npm run api:lint && npm run mocha"
+    "lint": "eslint src/. test/. --config .eslintrc.json",
+    "test": "mocha test/ --recursive --exit"
   },
   "standard": {
     "env": [

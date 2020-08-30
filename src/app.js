@@ -32,9 +32,6 @@ app.use(compress());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Host the public folder
-app.use('/', express.static(app.get('frontend')));
-
 // Set up Plugins and providers
 app.configure(express.rest());
 app.configure(socketio());
