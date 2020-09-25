@@ -5,8 +5,8 @@ module.exports = function(app) {
   }
 
   app.on('connection', connection => {
-    // On a new real-time connection, add it to the anonymous channel
-    app.channel('anonymous').join(connection);
+    // On a new real-time connection, add it to the 'everyone' channel
+    app.channel('everyone').join(connection);
     app.channel('chat-messages').join(connection);
   });
 
@@ -16,9 +16,6 @@ module.exports = function(app) {
     if(connection) {
       // Obtain the logged in user from the connection
       // const user = connection.user;
-      
-      // The connection is no longer anonymous, remove it
-      app.channel('anonymous').leave(connection);
 
       // Add it to the authenticated user channel
       app.channel('authenticated').join(connection);
@@ -37,20 +34,14 @@ module.exports = function(app) {
     }
   });
 
-  // eslint-disable-next-line no-unused-vars
-  app.publish((data, hook) => {
-    // Here you can add event publishers to channels set up in `channels.js`
-    // To publish only for a specific event use `app.publish(eventname, () => {})`
-
-    console.log('Publishing all events to all authenticated users. See `channels.js` and https://docs.feathersjs.com/api/channels.html for more information.'); // eslint-disable-line
-
-    // e.g. to publish all service events to all authenticated users use
-    return app.channel('authenticated');
-  });
-
   // publish new messages to channel
   app.service('entries').publish((data, hook) => {
     return app.channel('chat-messages');
+  });
+
+  // publish event-stats to every1
+  app.service('event-stats').publish((data, hook) => {
+    return app.channel('everyone');
   });
 
   // Here you can also add service specific event publishers
