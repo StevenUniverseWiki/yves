@@ -1,7 +1,6 @@
 {
   "host": "localhost",
   "port": "PORT",
-  "frontend": "../frontend/dist",
   "paginate": {
     "default": 100,
     "max": 3000

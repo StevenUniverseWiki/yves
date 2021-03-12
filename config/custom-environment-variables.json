@@ -1,0 +1,11 @@
+{
+	"host": "HOSTNAME",
+  "port": "PORT",
+  "secret": "JWT_SECRET",
+  "authentication": {
+    "jwtOptions": {
+      "audience": "FRONTEND_URL"
+    }
+  },
+  "mongodb": "MONGODB_URI"
+}
