@@ -9,7 +9,6 @@ const configuration = require('@feathersjs/configuration');
 const express = require('@feathersjs/express');
 const socketio = require('@feathersjs/socketio');
 
-
 const middleware = require('./middleware');
 const services = require('./services');
 const appHooks = require('./app.hooks');
@@ -18,6 +17,9 @@ const channels = require('./channels');
 const authentication = require('./authentication');
 
 const mongoose = require('./mongoose');
+
+const http = require('https');
+const { URL } = require('url');
 
 const app = express(feathers());
 
@@ -34,7 +36,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // Set up Plugins and providers
 app.configure(express.rest());
-app.configure(socketio());
+app.configure(socketio({
+  cors: {
+    origin: true
+  }
+}));
 
 app.configure(mongoose);
 
@@ -45,6 +51,19 @@ app.configure(authentication);
 app.configure(services);
 // Set up event channels (see channels.js)
 app.configure(channels);
+
+// Wikia /api/v1 proxy
+app.use('/api-proxy', (req, res) => {
+  res.set('Cache-Control', 'public, max-age=3600');
+
+  let options = new URL(`https://community.fandom.com/api/v1${req.url}`);
+  let proxyRequest = http.get(options, (proxyResponse) => {
+    proxyResponse.pipe(res, {end: true});
+  });
+  proxyRequest.on('error', console.error);
+
+  req.pipe(proxyRequest, {end: true});
+});
 
 // Configure a middleware for 404s and the error handler
 app.use(express.notFound());
